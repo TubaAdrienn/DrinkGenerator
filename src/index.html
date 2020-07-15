@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink App</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a href="#" class="navbar-brand">Random Drink Generator</a>
+        </div>  
+    </nav>
+
+    <div class="card-container card border-primary mb-3" style="max-width: 40rem; margin:auto;">
+        <div class="card-header">How many ingredients do you need?</div>
+        <div class="card-body">
+            <label>Enter here: </label>
+            <br>
+            <input type="text" class="number-form mb-3 mr-3">
+            <button type="button" class="yep-button btn btn-dark mb-3" >Yup.</button>
+            <h2 style="display: none;" class="ing-label">Your ingredients: </h2>
+            <ul class="ing-list"></ul>
+        </div>
+    </div>
+    <footer>
+        Random Drink Generator &copy;
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>   
+    <script src="getdrinks.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
