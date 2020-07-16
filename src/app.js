@@ -10,15 +10,25 @@ const form=document.querySelector(".number-form");
 //Add eventlistener
 document.querySelector('.card-container').addEventListener('click',function(e){
     if(e.target.classList.contains('yep-button')){
-        //Value check if integer
-
-
 
         if(form.value!=="" ){
-        fetchDrink.getDrinks().then(function(resp){
-            ui.displayDrink(form.value, resp.ingr.drinks);
-        });       
-     } 
+
+            if(Number.isInteger(parseInt(form.value))){
+
+                if(parseInt(form.value)<=100 && parseInt(form.value)>0){
+
+                    fetchDrink.getDrinks().then(function(resp){
+                    ui.displayDrink(form.value, resp.ingr.drinks);
+                    });    
+                }else{
+                   ui.showAlert("That's too much.");
+                }
+            }else{
+                ui.showAlert("Not a number, buddy.");
+            } 
+        }else{
+            ui.showAlert("It's empty, buddy.");
+        }
     }
     e.preventDefault();
 })

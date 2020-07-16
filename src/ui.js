@@ -8,8 +8,11 @@ class UI{
     }
 
     displayDrink(number, ingredients){
-        const list=document.querySelector(".ing-list");
-        const label=document.querySelector(".ing-label");
+        const ingDiv=document.querySelector('.ing-container');
+        ingDiv.innerHTML="";
+        const ul=document.createElement("ul");
+        const h2=document.createElement("h2");
+        h2.innerText="Your ingredients: "
         let random;
         let output="";
         for(number; number>0; number--){
@@ -19,17 +22,19 @@ class UI{
             `;
         }
 
-        list.innerHTML=output;
-        label.style.display="block";
+        ingDiv.appendChild(h2);
+        ul.innerHTML=output;
+        ingDiv.appendChild(ul);
 
     }
 
     //Show alert if not integer
-    showAlert(){
+    showAlert(message){
+        const ingDiv=document.querySelector(".ing-container");
+        ingDiv.innerHTML=`<div class="alert alert-danger">${message}</div>`;
 
+        setTimeout(function(){
+            document.querySelector(".ing-container").innerHTML="";
+        }, 2000);
     }
-
-
-
-
 }
