@@ -1,13 +1,18 @@
 class UI{
+
     constructor(){
     }
 
+
+    //Gives a random number
     giveRandom(){
         let random=Math.floor(Math.random()*100);
         return random;
     }
 
-    displayDrink(number, ingredients){
+
+    //Display drink ingredients
+    displayDrinkIngr(number, ingredients){
         const ingDiv=document.querySelector('.ing-container');
         ingDiv.innerHTML="";
         const ul=document.createElement("ul");
@@ -28,6 +33,7 @@ class UI{
 
     }
 
+
     //Show alert if not integer
     showAlert(message){
         const ingDiv=document.querySelector(".ing-container");
@@ -36,5 +42,40 @@ class UI{
         setTimeout(function(){
             document.querySelector(".ing-container").innerHTML="";
         }, 2000);
+    }
+
+
+    //Show categories
+    displayCategs(categories){
+         const menu=document.querySelector('.drop-cats');
+
+         categories.forEach(cat=>{
+            let newItem=document.createElement('a');
+            newItem.className='dropdown-item';
+            newItem.setAttribute=("href", "#");
+            newItem.textContent=cat.strCategory;
+            menu.appendChild(newItem);
+        });
+
+    }
+
+    //Display Drinks by Cat
+    displayDrinksByCat(drinks){
+        const div=document.querySelector('#drink-cont');
+        div.innerHTML="";
+        let output="";
+
+        drinks.forEach((drink)=>{
+            output+=`
+            <div class="card border-primary mb-3" style="max-width: 250px; margin-bottom: 20px; margin-left: 10px;">
+                <div class="card-header"><a href="#">${drink.strDrink}</a></div>
+                <div class="card-body">
+                  <img src="${drink.strDrinkThumb}"  style=" max-width: 200px; max-height: 200px;" alt='missing' />
+                </div>
+            </div>`
+            });
+
+        div.innerHTML=output;
+
     }
 }

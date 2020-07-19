@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-6">
         <a class="navbar-brand" href="#">Grey Goose Grounds</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -27,9 +26,26 @@
           </ul>
         </div>
       </nav>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+          <div class="drop-cats dropdown-menu">
+          </div>
+        </li>
+      </ul> 
+
+  <div style="display: flex; flex-wrap: wrap; flex-direction: row; margin-left: 30px;" id="drink-cont">
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  
+    <script src="../util/ui.js"></script>
+    <script src="../util/getdrinks.js"></script>
+    <script src="catalog.js"></script>
 
             
-      <footer>
+      <footer class="footer" style=" position: fixed; left: 0; bottom: 0; width: 100%; font-size: 10px;">
         Grey Goose Grounds &copy;
     </footer>
     

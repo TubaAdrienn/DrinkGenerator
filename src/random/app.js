@@ -19,7 +19,7 @@ document.querySelector('.card-container').addEventListener('click',function(e){
                 if(parseInt(form.value)<=100 && parseInt(form.value)>0){
 
                     fetchDrink.getDrinksIngr().then(function(resp){
-                    ui.displayDrink(form.value, resp.ingr.drinks);
+                    ui.displayDrinkIngr(form.value, resp.ingr.drinks);
                     });    
                 }else{
                    ui.showAlert("That's too much.");
