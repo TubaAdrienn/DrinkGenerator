@@ -7,6 +7,7 @@ const ui=new UI();
 //Form
 const form=document.querySelector(".number-form");
 
+
 //Add eventlistener
 document.querySelector('.card-container').addEventListener('click',function(e){
     if(e.target.classList.contains('yep-button')){
@@ -17,7 +18,7 @@ document.querySelector('.card-container').addEventListener('click',function(e){
 
                 if(parseInt(form.value)<=100 && parseInt(form.value)>0){
 
-                    fetchDrink.getDrinks().then(function(resp){
+                    fetchDrink.getDrinksIngr().then(function(resp){
                     ui.displayDrink(form.value, resp.ingr.drinks);
                     });    
                 }else{
