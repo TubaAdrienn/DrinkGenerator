@@ -54,5 +54,21 @@ class GetDrinks{
         }
     }
 
+    async getModalData(id){
+      const response=await fetch(`https://the-cocktail-db.p.rapidapi.com/lookup.php?i=${id}`, {
+            "method": "GET",
+	        "headers": {
+	        	"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+	        	"x-rapidapi-key": "1434b5828dmsh57c108713d5e9efp191635jsnc07f3f8ab810"
+    	}
+    })
+
+        const item=await response.json();
+
+        return{
+            item
+        }
+
+    }
 
 }

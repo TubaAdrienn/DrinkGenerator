@@ -68,7 +68,7 @@ class UI{
         drinks.forEach((drink)=>{
             output+=`
             <div class="card border-primary mb-3" style="max-width: 250px; margin-bottom: 20px; margin-left: 10px;">
-                <div class="card-header"><a href="#">${drink.strDrink}</a></div>
+                <div class="card-header"><a id="${drink.idDrink}" class="open-modal" data-toggle="modal" data-target="#drink-modal" href="#">${drink.strDrink}</a></div>
                 <div class="card-body">
                   <img src="${drink.strDrinkThumb}"  style=" max-width: 200px; max-height: 200px;" alt='missing' />
                 </div>
@@ -76,6 +76,32 @@ class UI{
             });
 
         div.innerHTML=output;
+    }
+
+    //Set the ingredients and instructions
+    setModalData(drink){
+        const modal=document.querySelector(".modal-body");
+        const modalDiv=document.createElement("div");
+        modal.innerHTML="";
+        const ul=document.createElement("ul")
+        ul.className="ingr-list mb-3"
+        let output="";
+
+        for(let i=1; i<16; i++){
+            let ingrName="strIngredient"+i;
+            if(drink[ingrName]!==null){
+                output+=`
+                <li class="ingr-item">${drink[ingrName]}</li>`
+            } else{
+              break;
+            }
+        }
+
+        ul.innerHTML=output;
+        modal.appendChild(ul);
+        modalDiv.innerHTML=`
+        <p>${drink.strInstructions}</p>`
+        modal.appendChild(modalDiv);
 
     }
 }
