@@ -71,4 +71,26 @@ class GetDrinks{
 
     }
 
+    async getDrinkByIngredient(ingr){
+        const response= await fetch(`https://the-cocktail-db.p.rapidapi.com/filter.php?i=${ingr}`, {
+	        "method": "GET",
+	        "headers": {
+		        "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+		        "x-rapidapi-key": "1434b5828dmsh57c108713d5e9efp191635jsnc07f3f8ab810"
+        	}
+        });
+
+        let drink;
+
+        try{
+            drink= await response.json();
+        }catch{
+            drink="";
+        }
+
+        return {
+            drink
+        }
+    }
+
 }

@@ -1,6 +1,7 @@
 //UI and fetch instance
 const get=new GetDrinks();
 const ui=new UI();
+const search=document.querySelector("#search-drink");
 
 
 document.addEventListener('DOMContentLoaded', (e) => {
@@ -8,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 });
 
 document.querySelector('.drop-cats').addEventListener('click',function(e){
-   get.getDrinkByCat(e.target.textContent).then((resp)=>ui.displayDrinksByCat(resp.cocktails.drinks))
+   get.getDrinkByCat(e.target.textContent).then((resp)=>ui.displayDrinks(resp.cocktails.drinks))
 });
 
 document.querySelector("#drink-cont").addEventListener('click', function(e){
@@ -20,3 +21,18 @@ document.querySelector("#drink-cont").addEventListener('click', function(e){
     }
     
 });
+
+search.addEventListener('keyup', function(){
+    if(search.value!=""){
+        get.getDrinkByIngredient(search.value).then(resp=>{
+            if(resp.drink!=""){
+                ui.displayDrinks(resp.drink.drinks);
+            } else{
+                ui.clearDrink();
+            }
+        });
+    } else{
+        ui.clearDrink();
+    }
+ 
+})

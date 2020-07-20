@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-6">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
         <a class="navbar-brand" href="#">Grey Goose Grounds</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -26,16 +26,20 @@
           </ul>
         </div>
       </nav>
-      <ul class="nav nav-pills flex-column">
+      <ul class="nav nav-pills flex-row" style="justify-content: space-between; margin-right: 15px;">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
           <div class="drop-cats dropdown-menu">
           </div>
         </li>
+        <li class="nav-item flex-row mb-3">
+          <label for="" class="search-label"> Search by ingredient: </label>
+            <input type="text" id="search-drink" placeholder="Ingredient Name">
+        </li>
       </ul> 
 
   <div style="display: flex; flex-wrap: wrap; flex-direction: row; margin-left: 30px;" id="drink-cont">
-    <h1 style="margin:auto;">Choose a category, my dude.</h1>
+    <h1 style="margin:auto;">Choose a category or search for a cockail, my dude.</h1>
   </div>
 
 <div id="drink-modal" class="modal fade" role="dialog">

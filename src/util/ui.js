@@ -60,7 +60,7 @@ class UI{
     }
 
     //Display Drinks by Cat
-    displayDrinksByCat(drinks){
+    displayDrinks(drinks){
         const div=document.querySelector('#drink-cont');
         div.innerHTML="";
         let output="";
@@ -76,6 +76,11 @@ class UI{
             });
 
         div.innerHTML=output;
+    }
+
+    clearDrink(){
+        const div=document.querySelector('#drink-cont');
+        div.innerHTML='<h1 style="margin:auto;">Choose a category or search for a cockail, my dude.</h1>';
     }
 
     //Set the ingredients and instructions
